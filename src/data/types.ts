@@ -5,8 +5,6 @@ export type Profile = {
   name: string
   /** 이름 아래 한 줄. 「무엇을 하는 사람인가」 */
   headline: string
-  /** 두세 문장. 경력의 성격과 강점 */
-  summary: string
   location: string
   email: string
   /**
@@ -15,6 +13,14 @@ export type Profile = {
    */
   highlights: { value: string; label: string }[]
   links: { label: string; href: string }[]
+}
+
+/** 소개 구역. 히어로에는 안 들어가는 배경 이야기가 여기 모인다 */
+export type About = {
+  /** 문단 단위. 두세 개를 넘기지 않는다 */
+  paragraphs: string[]
+  education: { period: string; name: string; detail: string }[]
+  certifications: { name: string; issuer: string; date: string }[]
 }
 
 export type CareerEntry = {
@@ -26,6 +32,10 @@ export type CareerEntry = {
   points: string[]
 }
 
+/**
+ * 프로젝트 한 건은 「문제 → 내 역할 → 한 일 → 결과」 넷으로 적는다.
+ * 넷 중 결과가 가장 먼저 읽혀야 해서 화면에서도 위에 온다.
+ */
 export type Project = {
   id: string
   /** 배열 맨 앞 두 개는 화면에서 가로 전면으로 크게 나온다 */
@@ -37,9 +47,12 @@ export type Project = {
   period: string
   /** 내가 맡은 범위. 팀 성과와 내 몫을 섞지 않는다 */
   role: string
-  /** 숫자로 말할 수 있는 것. 없으면 빈 배열로 두고 points 로만 */
+  /** 무엇이 문제였나. 한 문장 */
+  problem: string
+  /** 무엇을 했나 — 구조 선택과 그 까닭 */
+  approach: string[]
+  /** 결과. 숫자로 말할 수 있는 것만 넣는다 */
   metrics?: { label: string; value: string }[]
-  points: string[]
   stack: string[]
   links?: { label: string; href: string }[]
 }

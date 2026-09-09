@@ -14,6 +14,7 @@ function Head({ project }: { project: Project }) {
   )
 }
 
+/** 결과가 넷 중 가장 먼저 읽혀야 해서 화면에서도 위에 온다 */
 function Metrics({ project }: { project: Project }) {
   if (!project.metrics || project.metrics.length === 0) return null
 
@@ -26,6 +27,35 @@ function Metrics({ project }: { project: Project }) {
         </div>
       ))}
     </div>
+  )
+}
+
+function Field({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <div className="field">
+      <h4 className="field__label">{label}</h4>
+      {children}
+    </div>
+  )
+}
+
+function Problem({ project }: { project: Project }) {
+  return (
+    <Field label="문제">
+      <p className="field__body">{project.problem}</p>
+    </Field>
+  )
+}
+
+function Approach({ project }: { project: Project }) {
+  return (
+    <Field label="한 일">
+      <ul className="points">
+        {project.approach.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </Field>
   )
 }
 
@@ -43,16 +73,6 @@ function Links({ project }: { project: Project }) {
   )
 }
 
-function Points({ project }: { project: Project }) {
-  return (
-    <ul className="points">
-      {project.points.map((point) => (
-        <li key={point}>{point}</li>
-      ))}
-    </ul>
-  )
-}
-
 function Stack({ project }: { project: Project }) {
   return (
     <div className="chips">
@@ -61,6 +81,15 @@ function Stack({ project }: { project: Project }) {
           {tech}
         </span>
       ))}
+    </div>
+  )
+}
+
+function Meta({ project }: { project: Project }) {
+  return (
+    <div className="card__meta">
+      <span>{project.period}</span>
+      <span>{project.role}</span>
     </div>
   )
 }
@@ -84,14 +113,12 @@ function ProjectCard({ project, featured }: { project: Project; featured: boolea
             <Head project={project} />
             <p className="card__summary">{project.summary}</p>
             <Metrics project={project} />
-            <div className="card__meta">
-              <span>{project.period}</span>
-              <span>{project.role}</span>
-            </div>
+            <Problem project={project} />
+            <Meta project={project} />
             <Links project={project} />
           </div>
           <div className="card__column">
-            <Points project={project} />
+            <Approach project={project} />
             <Stack project={project} />
           </div>
         </div>
@@ -104,11 +131,9 @@ function ProjectCard({ project, featured }: { project: Project; featured: boolea
       <Head project={project} />
       <p className="card__summary">{project.summary}</p>
       <Metrics project={project} />
-      <div className="card__meta">
-        <span>{project.period}</span>
-        <span>{project.role}</span>
-      </div>
-      <Points project={project} />
+      <Problem project={project} />
+      <Approach project={project} />
+      <Meta project={project} />
       <Links project={project} />
       <Stack project={project} />
     </article>

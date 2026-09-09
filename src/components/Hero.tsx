@@ -2,7 +2,7 @@ import { profile } from '../data/profile'
 
 export function Hero() {
   return (
-    <header className="hero">
+    <header className="hero" id="top">
       <h1 className="hero__name">{profile.name}</h1>
       <p className="hero__headline">{profile.headline}</p>
 
@@ -14,8 +14,6 @@ export function Hero() {
           </div>
         ))}
       </div>
-
-      <p className="hero__summary">{profile.summary}</p>
 
       <div className="hero__actions">
         <a className="button button--primary" href={`mailto:${profile.email}`}>

@@ -91,6 +91,63 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .section { padding: var(--space-8) 0; border-top: 1px solid var(--border); }
 
+/* 고정 머리말만큼 앵커가 가려지지 않게 */
+.section,
+.hero { scroll-margin-top: 4rem; }
+
+/* ---------- 네비게이션 ---------- */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  max-width: var(--page);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+  min-height: 3.5rem;
+}
+
+.nav__home {
+  flex: none;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.nav__links {
+  display: flex;
+  gap: var(--space-1);
+  margin-left: auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.nav__links::-webkit-scrollbar { display: none; }
+
+.nav__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0 var(--space-1);
+  color: var(--text-dim);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 120ms ease;
+}
+
+.nav__link:hover { color: var(--accent); }
+
 .section__title {
   margin: 0 0 var(--space-6);
   font-size: var(--fs-title);
@@ -118,12 +175,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-weight: 550;
   line-height: 1.35;
   letter-spacing: -0.015em;
-}
-
-.hero__summary {
-  margin: 0 0 var(--space-6);
-  max-width: var(--measure);
-  color: var(--text-dim);
 }
 
 /* 30초 안에 읽히는 것은 문단이 아니라 이 줄이다 */
@@ -302,6 +353,19 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .metric__label { font-size: var(--fs-small); color: var(--text-faint); }
 
+/* 문제 / 한 일 — 축이 눈에 보여야 스캔이 된다 */
+.field { display: grid; gap: 0.35rem; }
+
+.field__label {
+  margin: 0;
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-faint);
+}
+
+.field__body { margin: 0; color: var(--text-dim); }
+
 .points { display: grid; gap: var(--space-1); color: var(--text-dim); }
 
 .points li { position: relative; padding-left: var(--space-2); }
@@ -326,6 +390,37 @@ ul { margin: 0; padding: 0; list-style: none; }
   border: 1px solid var(--border);
   border-radius: 0.3rem;
 }
+
+/* ---------- 소개 ---------- */
+
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 18rem;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.about__text { display: grid; gap: var(--space-2); max-width: var(--measure); }
+
+.about__text p { margin: 0; color: var(--text-dim); }
+
+.about__facts { display: grid; gap: var(--space-3); }
+
+.about__group { display: grid; gap: var(--space-1); }
+
+.about__label {
+  margin: 0;
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-faint);
+}
+
+.about__list { display: grid; gap: var(--space-1); }
+
+.about__name { display: block; font-size: var(--fs-small); font-weight: 650; }
+
+.about__meta { display: block; font-size: var(--fs-small); color: var(--text-faint); }
 
 /* ---------- 기술 ---------- */
 
@@ -366,6 +461,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 @media (max-width: 56rem) {
   .projects { grid-template-columns: 1fr; }
   .card--featured .card__split { grid-template-columns: 1fr; gap: var(--space-2); }
+  .about { grid-template-columns: 1fr; gap: var(--space-4); }
 }
 
 @media (max-width: 40rem) {
