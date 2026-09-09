@@ -159,6 +159,16 @@ ul { margin: 0; padding: 0; list-style: none; }
   line-height: 1.05;
 }
 
+/* 한글 이름 뒤에 붙는 영문 표기 — 크기로 주종을 가른다 */
+.hero__name-latin {
+  margin-left: 0.5em;
+  font-size: clamp(1.1rem, 2.2vw, 1.75rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
 .hero__headline {
   margin: 0 0 var(--space-3);
   max-width: var(--measure);

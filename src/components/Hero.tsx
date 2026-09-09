@@ -3,7 +3,12 @@ import { profile } from '../data/profile'
 export function Hero() {
   return (
     <header className="hero" id="top">
-      <h1 className="hero__name">{profile.name}</h1>
+      <h1 className="hero__name">
+        {profile.name}
+        {profile.nameLatin && (
+          <span className="hero__name-latin">{profile.nameLatin}</span>
+        )}
+      </h1>
       <p className="hero__headline">{profile.headline}</p>
 
       <div className="highlights">

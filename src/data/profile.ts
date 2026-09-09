@@ -2,6 +2,7 @@ import type { Profile } from './types'
 
 export const profile: Profile = {
   name: 'TODO — 이름',
+  nameLatin: 'TODO — 영문 표기',
   headline: '대학 행정 시스템을 짓고 운영하는 개발자',
   location: '대한민국 서울',
   email: 'TODO — 공개용 메일 주소',

@@ -3,6 +3,8 @@
 export type Profile = {
   /** 화면 맨 위에 크게 나오는 이름 */
   name: string
+  /** 이름 뒤에 작게 붙는 영문 표기. 안 쓰면 빈 문자열로 두면 사라진다 */
+  nameLatin: string
   /** 이름 아래 한 줄. 「무엇을 하는 사람인가」 */
   headline: string
   location: string
