@@ -46,8 +46,8 @@ export type Project = {
   title: string
   /** 카드 제목 아래 한 줄 요약 */
   summary: string
-  /** 「업무」는 회사 일, 「개인」은 사이드 프로젝트 */
-  kind: '업무' | '개인'
+  /** 카드에 붙는 이름표. 「팀」은 여럿이 한 것 */
+  kind: '업무' | '팀' | '개인'
   period: string
   /** 내가 맡은 범위. 팀 성과와 내 몫을 섞지 않는다 */
   role: string

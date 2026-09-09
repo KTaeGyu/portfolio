@@ -1,9 +1,5 @@
-import { projects } from '../data/projects'
 import type { Project } from '../data/types'
 import { Section } from './Section'
-
-/** 배열 맨 앞 몇 개를 가로 전면으로 크게 보인다 — 순서가 곧 중요도라는 뜻 */
-const FEATURED_COUNT = 2
 
 function Head({ project }: { project: Project }) {
   return (
@@ -140,15 +136,23 @@ function ProjectCard({ project, featured }: { project: Project; featured: boolea
   )
 }
 
-export function Projects() {
+type Props = {
+  id: string
+  title: string
+  items: Project[]
+  /** 앞에서 몇 개를 가로 전면으로 크게 보일지 — 순서가 곧 중요도라는 뜻 */
+  featuredCount: number
+}
+
+export function Projects({ id, title, items, featuredCount }: Props) {
   return (
-    <Section id="projects" title="프로젝트">
+    <Section id={id} title={title}>
       <div className="projects">
-        {projects.map((project, index) => (
+        {items.map((project, index) => (
           <ProjectCard
             key={project.id}
             project={project}
-            featured={index < FEATURED_COUNT}
+            featured={index < featuredCount}
           />
         ))}
       </div>

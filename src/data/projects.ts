@@ -4,7 +4,7 @@ import type { Project } from './types'
  * 회사 업무는 시스템 실명 없이 「무엇을 하는 시스템인가」로만 적는다.
  * 배열 순서가 화면 순서이고, 맨 앞 둘이 가로 전면으로 크게 나온다.
  */
-export const projects: Project[] = [
+export const workProjects: Project[] = [
   {
     id: 'api-gateway',
     title: '사내 데이터 연계 API 게이트웨이',
@@ -81,20 +81,73 @@ export const projects: Project[] = [
     ],
     stack: ['Jenkins', 'nginx', 'systemd', 'Shell', 'Linux'],
   },
+]
+
+/** 회사 밖에서 만든 것. 업무와 섞으면 둘 다 흐려진다 */
+export const sideProjects: Project[] = [
   {
-    id: 'local-env',
-    title: '로컬 통합 개발환경',
-    summary: '서버 여러 대짜리 시스템을 개발자 PC 한 대에서 재현',
-    kind: '업무',
-    period: 'TODO — 착수 ~ 운영',
-    role: '설계 · 구축',
-    problem: '시스템끼리 인증과 API 로 얽혀 있어 한 대만 띄워서는 화면이 뜨지 않았다',
+    id: 'samsung-signature',
+    title: 'Samsung Signature',
+    summary: '실물 카드 없이 결제 권한만 넘겨 대신 결제하게 하는 모바일 서비스',
+    kind: '팀',
+    period: '2024.04 ~ 2024.05',
+    role: '팀 리드 · 프론트엔드 (6명)',
+    problem:
+      '카드를 통째로 빌려주지 않고는 심부름 결제나 법인카드 임시 사용을 맡길 방법이 없었다',
     approach: [
-      '도메인 · 인증서 · 프록시를 실제 구성과 같은 모양으로 맞춰 「로컬에선 됐는데」를 줄임',
-      '명령 하나로 전체를 띄우고 앱 단위로만 다시 빌드하도록 구성',
+      'RSA + AES 하이브리드 암호화로 결제 권한만 넘기고 카드 정보는 넘기지 않게 함',
+      '서비스를 인증 · 지갑 · 결제 · VAN 으로 쪼개고 게이트웨이와 서비스 등록을 앞에 둠',
+      '요청 · 승인 · 거절 상태를 실시간으로 따라가게 하고 푸시로 알림',
     ],
-    metrics: [{ label: '한 PC 에서 재현', value: 'TODO — n대' }],
-    stack: ['Docker', 'nginx', 'PowerShell', 'WSL'],
+    metrics: [
+      { label: '팀 규모', value: '6명' },
+      { label: '개발 기간', value: '7주' },
+    ],
+    stack: [
+      'TypeScript',
+      'React Native',
+      'Redux Toolkit',
+      'TanStack Query',
+      'Spring Boot',
+      'Kafka',
+      'Docker',
+      'Jenkins',
+    ],
+    links: [
+      {
+        label: 'GitHub',
+        href: 'https://github.com/orgs/SamsungSignature/repositories',
+      },
+    ],
+  },
+  {
+    id: 'trip-together',
+    title: 'Trip-Together',
+    summary: '배낭여행 동행을 찾고 쓴 돈을 함께 정산하는 앱',
+    kind: '팀',
+    period: 'TODO — 착수 ~ 종료',
+    role: '프론트엔드 리드 (6명)',
+    problem:
+      '혼자 다니는 배낭여행자는 동행을 구하는 곳과 환전 · 정산하는 곳이 따로 놀았다',
+    approach: [
+      '위치를 기준으로 즉석 모임을 찾고 참여 승인까지 앱 안에서 끝내게 함',
+      '은행 OAuth 2.0 으로 계좌를 연결해 앱이 금융 인증 정보를 쥐지 않게 함',
+      '실제 거래 내역을 기준으로 더치페이를 계산해 「누가 얼마 냈나」를 다투지 않게 함',
+    ],
+    metrics: [{ label: '팀 규모', value: '6명' }],
+    stack: [
+      'TypeScript',
+      'React Native',
+      'Redux',
+      'Spring Boot',
+      'MySQL',
+      'MongoDB',
+      'Redis',
+      'RabbitMQ',
+    ],
+    links: [
+      { label: 'GitHub', href: 'https://github.com/SSAFY-A309/Trip-Together' },
+    ],
   },
   {
     id: 'the-gang',

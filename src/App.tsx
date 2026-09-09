@@ -5,6 +5,7 @@ import { Career } from './components/Career'
 import { About } from './components/About'
 import { Skills } from './components/Skills'
 import { Contact } from './components/Contact'
+import { workProjects, sideProjects } from './data/projects'
 import { profile } from './data/profile'
 
 export default function App() {
@@ -19,7 +20,8 @@ export default function App() {
         */}
         <Hero />
         <main>
-          <Projects />
+          <Projects id="work" title="업무 프로젝트" items={workProjects} featuredCount={2} />
+          <Projects id="side" title="팀 · 개인 프로젝트" items={sideProjects} featuredCount={1} />
           <Career />
           <About />
           <Skills />

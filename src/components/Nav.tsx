@@ -1,6 +1,7 @@
 /** 화면 순서와 같아야 한다 — 어긋나면 눌렀을 때 엉뚱한 데로 간다 */
 const SECTIONS = [
-  { id: 'projects', label: '프로젝트' },
+  { id: 'work', label: '업무' },
+  { id: 'side', label: '팀 · 개인' },
   { id: 'career', label: '경력' },
   { id: 'about', label: '소개' },
   { id: 'skills', label: '기술' },
