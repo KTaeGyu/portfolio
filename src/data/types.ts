@@ -9,6 +9,11 @@ export type Profile = {
   summary: string
   location: string
   email: string
+  /**
+   * 첫 화면에서 문단보다 먼저 읽히는 줄. 셋을 넘기지 않는다 —
+   * 넷째부터는 아무도 안 읽고 앞의 셋까지 같이 죽는다.
+   */
+  highlights: { value: string; label: string }[]
   links: { label: string; href: string }[]
 }
 
@@ -23,6 +28,7 @@ export type CareerEntry = {
 
 export type Project = {
   id: string
+  /** 배열 맨 앞 두 개는 화면에서 가로 전면으로 크게 나온다 */
   title: string
   /** 카드 제목 아래 한 줄 요약 */
   summary: string

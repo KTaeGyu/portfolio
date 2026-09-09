@@ -5,12 +5,30 @@ export function Hero() {
     <header className="hero">
       <h1 className="hero__name">{profile.name}</h1>
       <p className="hero__headline">{profile.headline}</p>
+
+      <div className="highlights">
+        {profile.highlights.map((highlight) => (
+          <div key={highlight.label}>
+            <span className="highlight__value">{highlight.value}</span>
+            <span className="highlight__label">{highlight.label}</span>
+          </div>
+        ))}
+      </div>
+
       <p className="hero__summary">{profile.summary}</p>
-      <div className="hero__meta">
-        <span>{profile.location}</span>
-        <a href={`mailto:${profile.email}`}>{profile.email}</a>
+
+      <div className="hero__actions">
+        <a className="button button--primary" href={`mailto:${profile.email}`}>
+          {profile.email}
+        </a>
         {profile.links.map((link) => (
-          <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
+          <a
+            key={link.href}
+            className="button"
+            href={link.href}
+            target="_blank"
+            rel="noreferrer"
+          >
             {link.label}
           </a>
         ))}

@@ -9,6 +9,11 @@ export const profile: Profile = {
     '배포를 무중단으로 바꾸는 일까지 — 만드는 쪽과 굴리는 쪽을 같이 봅니다.',
   location: '대한민국 서울',
   email: 'TODO — 공개용 메일 주소',
+  highlights: [
+    { value: 'TODO — n년', label: '개발 · 운영 경력' },
+    { value: '5대', label: '무중단 배포 전환' },
+    { value: 'TODO — n개', label: '연계 시스템' },
+  ],
   links: [
     { label: 'GitHub', href: 'https://github.com/KTaeGyu' },
     // { label: '블로그', href: '' },

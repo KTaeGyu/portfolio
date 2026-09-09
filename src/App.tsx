@@ -9,9 +9,10 @@ export default function App() {
   return (
     <div className="page">
       <Hero />
+      {/* 프로젝트가 경력보다 앞이다 — 채용 담당자가 먼저 보는 것이 그쪽이다 */}
       <main>
-        <Career />
         <Projects />
+        <Career />
         <Skills />
         <Contact />
       </main>
