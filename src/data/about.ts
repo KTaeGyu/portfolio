@@ -30,6 +30,6 @@ export const about: About = {
   ],
   certifications: [
     { name: '정보처리기사', issuer: '한국산업인력공단', date: '2024.12' },
-    { name: 'SQLD', issuer: '한국데이터산업진흥원', date: 'TODO — 취득 연월' },
+    { name: 'SQLD', issuer: '한국데이터산업진흥원', date: '2024.09' },
   ],
 }
