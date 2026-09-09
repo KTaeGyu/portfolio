@@ -1,11 +1,11 @@
 import type { Profile } from './types'
 
 export const profile: Profile = {
-  name: 'TODO — 이름',
-  nameLatin: 'TODO — 영문 표기',
+  name: '김태규',
+  nameLatin: 'KIM TAEGYU',
   headline: '대학 행정 시스템을 짓고 운영하는 개발자',
   location: '대한민국 서울',
-  email: 'TODO — 공개용 메일 주소',
+  email: 'xorb269@gmail.com',
   highlights: [
     { value: 'TODO — n년', label: '개발 · 운영 경력' },
     { value: '5대', label: '무중단 배포 전환' },

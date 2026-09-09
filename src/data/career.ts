@@ -2,7 +2,7 @@ import type { CareerEntry } from './types'
 
 export const career: CareerEntry[] = [
   {
-    period: 'TODO — 입사연월 ~ 재직 중',
+    period: '2025.02 ~ 재직 중',
     organization: '대학 전산 부서',
     role: '시스템 개발 · 운영',
     points: [
