@@ -27,6 +27,20 @@ export function About() {
           </div>
 
           <div className="about__group">
+            <h3 className="about__label">교육</h3>
+            <ul className="about__list">
+              {about.training.map((entry) => (
+                <li key={entry.name}>
+                  <span className="about__name">{entry.name}</span>
+                  <span className="about__meta">
+                    {entry.period} · {entry.detail}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="about__group">
             <h3 className="about__label">자격증</h3>
             <ul className="about__list">
               {about.certifications.map((entry) => (

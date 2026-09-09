@@ -22,6 +22,8 @@ export type About = {
   /** 문단 단위. 두세 개를 넘기지 않는다 */
   paragraphs: string[]
   education: { period: string; name: string; detail: string }[]
+  /** 학위가 아닌 교육 과정. 학력에 섞으면 학위처럼 읽힌다 */
+  training: { period: string; name: string; detail: string }[]
   certifications: { name: string; issuer: string; date: string }[]
 }
 

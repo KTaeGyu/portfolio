@@ -21,6 +21,13 @@ export const about: About = {
       detail: '학사 졸업 · 군휴학 2년',
     },
   ],
+  training: [
+    {
+      period: '2023.06 ~ 2024.06',
+      name: '삼성 청년 SW 아카데미(SSAFY) 10기',
+      detail: '비전공 트랙 수료 · 팀 프로젝트 4건',
+    },
+  ],
   certifications: [
     { name: 'TODO — 자격증 이름', issuer: 'TODO — 발급 기관', date: 'TODO — 취득 연월' },
   ],
