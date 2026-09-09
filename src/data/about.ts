@@ -18,7 +18,7 @@ export const about: About = {
     {
       period: '2015.03 ~ 2021.02',
       name: '전북대학교 화학과',
-      detail: '학사 졸업',
+      detail: '학사 졸업 · 군휴학 2년',
     },
   ],
   certifications: [
