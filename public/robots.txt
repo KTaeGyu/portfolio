@@ -1,0 +1,4 @@
+# 크롤링은 허용한다 — 막으면 index.html 의 noindex 를 크롤러가 못 읽는다.
+# 색인에서 빼는 일은 noindex meta 와 X-Robots-Tag 헤더가 한다.
+User-agent: *
+Allow: /

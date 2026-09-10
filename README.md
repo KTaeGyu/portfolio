@@ -45,6 +45,21 @@ Node 22.18 기준(`.node-version`).
 `src/index.css` 머리의 CSS 변수만 고치면 전체가 따라온다. 컴포넌트 안에서는
 색을 직접 쓰지 않는다. 라이트/다크는 `prefers-color-scheme` 으로 갈린다.
 
+## 검색엔진에서 빼 둔 상태다
+
+이직 준비용이라 **주소를 아는 사람만 보게** 해 뒀다. 세 곳이 함께 움직인다.
+
+| 자리 | 무엇 |
+|---|---|
+| `index.html` | `<meta name="robots" content="noindex, nofollow">` — 이게 주된 신호다 |
+| `vercel.json` | `X-Robots-Tag` 헤더. HTML 이 아닌 파일까지 덮는다 |
+| `public/robots.txt` | **크롤링은 허용**한다 |
+
+🔴 **`robots.txt` 로 막지 말 것.** 막으면 크롤러가 `noindex` 를 읽지 못해,
+외부 링크만으로 주소가 검색결과에 뜰 수 있다. 막는 것과 색인에서 빼는 것은 다른 일이다.
+
+이직이 끝나면 meta 한 줄과 `vercel.json` 의 헤더를 지우면 풀린다.
+
 ## 배포
 
 Vercel. 저장소를 연결하면 기본값(`npm run build` → `dist/`)으로 잡힌다.

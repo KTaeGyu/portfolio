@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
 
+    <!--
+      검색엔진에서 빼 둔다. 주소를 아는 사람만 본다.
+      이직이 끝나면 이 meta 한 줄과 vercel.json 의 X-Robots-Tag 를 지우면 풀린다.
+      robots.txt 로 크롤링을 «막지» 않는다 — 막으면 크롤러가 이 줄을 못 읽어
+      외부 링크만으로 주소가 검색결과에 뜰 수 있다.
+    -->
+    <meta name="robots" content="noindex, nofollow" />
+
     <title>김태규 · 프로젝트정리</title>
     <meta name="description" content="대학 행정 시스템을 짓고 운영하는 개발자의 프로젝트 정리" />
     <meta property="og:title" content="김태규 · 프로젝트정리" />
