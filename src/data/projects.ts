@@ -125,7 +125,7 @@ export const sideProjects: Project[] = [
     title: 'Trip-Together',
     summary: '배낭여행 동행을 찾고 쓴 돈을 함께 정산하는 앱',
     kind: '팀',
-    period: 'TODO — 착수 ~ 종료',
+    period: '2024.03 ~ 2024.04',
     role: '프론트엔드 리드 (6명)',
     problem:
       '혼자 다니는 배낭여행자는 동행을 구하는 곳과 환전 · 정산하는 곳이 따로 놀았다',
