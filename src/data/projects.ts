@@ -10,7 +10,7 @@ export const workProjects: Project[] = [
     title: '사내 데이터 연계 API 게이트웨이',
     summary: '시스템마다 제각각이던 데이터 제공 경로를 창구 하나로 모았다',
     kind: '업무',
-    period: 'TODO — 착수 ~ 운영',
+    period: '2026.06 ~ 2026.08',
     role: '설계 · 백엔드 · 운영 화면 전반',
     problem:
       '시스템마다 학사 DB에 직접 붙어 있어, 표 하나가 바뀌면 어디가 깨지는지 아무도 몰랐다',
@@ -30,7 +30,7 @@ export const workProjects: Project[] = [
     title: '통합 인증 OIDC 이관',
     summary: '자체 방식으로 굴러가던 로그인을 표준 프로토콜로 다시 세웠다',
     kind: '업무',
-    period: 'TODO — 착수 ~ 운영',
+    period: '2026.07 ~ 2026.08',
     role: '설계 · 이관 · 연계 시스템 대응',
     problem:
       '표준을 벗어난 자체 인증 연동 탓에 새 시스템을 붙일 때마다 붙이는 방식을 새로 만들어야 했다',
@@ -50,7 +50,7 @@ export const workProjects: Project[] = [
     title: '레거시 행정 업무 시스템 통합',
     summary: '따로 놀던 업무 시스템들을 하나의 행정 시스템으로 옮겼다',
     kind: '업무',
-    period: 'TODO — 착수 ~ 진행 중',
+    period: '2025.06 ~ 진행 중',
     role: '이관 설계 · 개발',
     problem:
       '자산 관리 · 채용 등 업무마다 시스템이 따로 있어 화면 규칙도 권한 체계도 제각각이었다',
@@ -66,7 +66,7 @@ export const workProjects: Project[] = [
     title: '무중단 배포 전환',
     summary: '배포할 때마다 서비스가 끊기던 것을 5개 시스템에서 없앴다',
     kind: '업무',
-    period: 'TODO — 착수 ~ 완료',
+    period: '2026.08',
     role: '배포 구조 설계 · 스크립트 · 서버 구성',
     problem:
       '배포할 때마다 서비스가 끊겨, 이용자가 적은 시간을 골라 사람이 지켜보며 올려야 했다',
