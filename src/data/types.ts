@@ -37,8 +37,11 @@ export type CareerEntry = {
 }
 
 /**
- * 프로젝트 한 건은 「문제 → 내 역할 → 한 일 → 결과」 넷으로 적는다.
- * 넷 중 결과가 가장 먼저 읽혀야 해서 화면에서도 위에 온다.
+ * 프로젝트 한 건은 「문제 → 판단 → 한 일 → 결과 → 배운 점」 다섯으로 적는다.
+ * 다섯 중 결과가 가장 먼저 읽혀야 해서 화면에서는 맨 위에 온다.
+ *
+ * 경력이 짧을 때는 「무엇을 만들었나」보다 「왜 그렇게 정했나 · 무엇을 배웠나」가
+ * 더 팔린다. decision 과 learned 가 그 자리다.
  */
 export type Project = {
   id: string
@@ -53,10 +56,20 @@ export type Project = {
   role: string
   /** 무엇이 문제였나. 한 문장 */
   problem: string
+  /**
+   * 갈림길에서 무엇 대신 무엇을 골랐고 왜 그랬나. 한 문단.
+   * 길게 쓰고 싶으면 경력기술서로 넘긴다 — 여기는 30초 스캔용이다.
+   */
+  decision?: string
   /** 무엇을 했나 — 구조 선택과 그 까닭 */
   approach: string[]
   /** 결과. 숫자로 말할 수 있는 것만 넣는다 */
   metrics?: { label: string; value: string }[]
+  /**
+   * 무엇을 배웠나. 한 문단.
+   * 🔴 반드시 본인 말로 받는다 — 대신 지어내면 면접에서 본인이 못 받는다.
+   */
+  learned?: string
   stack: string[]
   links?: { label: string; href: string }[]
 }

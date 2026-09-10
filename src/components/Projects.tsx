@@ -43,6 +43,17 @@ function Problem({ project }: { project: Project }) {
   )
 }
 
+/** 경력이 짧을 때 가장 팔리는 칸이라 「한 일」보다 먼저 온다 */
+function Decision({ project }: { project: Project }) {
+  if (!project.decision) return null
+
+  return (
+    <Field label="판단">
+      <p className="field__body">{project.decision}</p>
+    </Field>
+  )
+}
+
 function Approach({ project }: { project: Project }) {
   return (
     <Field label="한 일">
@@ -51,6 +62,16 @@ function Approach({ project }: { project: Project }) {
           <li key={item}>{item}</li>
         ))}
       </ul>
+    </Field>
+  )
+}
+
+function Learned({ project }: { project: Project }) {
+  if (!project.learned) return null
+
+  return (
+    <Field label="배운 점">
+      <p className="field__body">{project.learned}</p>
     </Field>
   )
 }
@@ -110,11 +131,13 @@ function ProjectCard({ project, featured }: { project: Project; featured: boolea
             <p className="card__summary">{project.summary}</p>
             <Metrics project={project} />
             <Problem project={project} />
+            <Decision project={project} />
             <Meta project={project} />
             <Links project={project} />
           </div>
           <div className="card__column">
             <Approach project={project} />
+            <Learned project={project} />
             <Stack project={project} />
           </div>
         </div>
@@ -128,7 +151,9 @@ function ProjectCard({ project, featured }: { project: Project; featured: boolea
       <p className="card__summary">{project.summary}</p>
       <Metrics project={project} />
       <Problem project={project} />
+      <Decision project={project} />
       <Approach project={project} />
+      <Learned project={project} />
       <Meta project={project} />
       <Links project={project} />
       <Stack project={project} />
